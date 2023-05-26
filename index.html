@@ -1,0 +1,433 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: #2F4F4F;
+            color: #FFFFFF;
+        }
+
+        .light-text {
+            color: #FFFFFF;
+        }
+
+        .dark-text {
+            color: #FFFFFF; /* Update to a lighter color */
+        }
+    </style>
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+
+            var lightTextColors = ['#2F4F4F', '#36454F', '#FF1493', '#8A2BE2', '#32CD32', '#FF8C00', '#FFD700', '#4169E1', '#DC143C', '#9932CC', '#FF4500', '#8B4513', '#FF69B4', '#4B0082', '#00CED1', '#F08080'];
+            var darkTextColors = ['#000000', '#8B0000', '#006400', '#800080', '#FF0000', '#008080', '#8B008B', '#000080', '#FF6347', '#228B22', '#8B4513', '#A52A2A', '#B22222', '#2E8B57', '#00008B', '#800000'];
+
+            var textColorClass = '';
+
+            if (lightTextColors.includes(color)) {
+                textColorClass = 'light-text';
+            } else if (darkTextColors.includes(color)) {
+                textColorClass = 'dark-text';
+            }
+
+            document.body.className = '';
+            document.body.classList.add(textColorClass);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="changeBackgroundColor('#2F4F4F')">Teal</button>
+    <button onclick="changeBackgroundColor('#000000')">Jet Black</button>
+    <button onclick="changeBackgroundColor('#36454F')">Coral Blue</button>
+    <button onclick="changeBackgroundColor('#1E90FF')">Bright Blue</button>
+    <button onclick="changeBackgroundColor('#FF1493')">Deep Pink</button>
+    <button onclick="changeBackgroundColor('#8A2BE2')">Blue Violet</button>
+    <button onclick="changeBackgroundColor('#32CD32')">Lime Green</button>
+    <button onclick="changeBackgroundColor('#FF8C00')">Dark Orange</button>
+    <button onclick="changeBackgroundColor('#FFD700')">Gold</button>
+    <button onclick="changeBackgroundColor('#4169E1')">Royal Blue</button>
+    <button onclick="changeBackgroundColor('#DC143C')">Crimson</button>
+    <button onclick="changeBackgroundColor('#9932CC')">Dark Orchid</button>
+    <button onclick="changeBackgroundColor('#FF4500')">Orange Red</button>
+    <button onclick="changeBackgroundColor('#8B4513')">Saddle Brown</button>
+    <button onclick="changeBackgroundColor('#FF69B4')">Hot Pink</button>
+    <button onclick="changeBackgroundColor('#4B0082')">Indigo</button>
+    <button onclick="changeBackgroundColor('#00CED1')">Brighter Blue</button>
+    <button onclick="changeBackgroundColor('#F08080')">Light Coral</button>
+    <button onclick="changeBackgroundColor('#FF6347')">Tomato</button>
+    <button onclick="changeBackgroundColor('#1E90FF')">Dodger Blue</button>
+    <button onclick="changeBackgroundColor('#228B22')">Forest Green</button>
+    <button onclick="changeBackgroundColor('#FF00FF')">Magenta</button>
+    <button onclick="changeBackgroundColor('#2E8B57')">Sea Green</button>
+    <button onclick="changeBackgroundColor('#FFFF00')">Yellow</button>
+</body>
+<html>
+<head>
+  <title>Summer Muscle Gain 7-Day Plan</title>
+  <style>
+    body {
+      background-color: #36454F;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 6px;
+    }
+
+    .exercise-done {
+      text-decoration: line-through;
+      color: #808080;
+    }
+
+    .button-reset {
+      margin-top: 10px;
+      display: block;
+      width: 100%;
+      background-color: #000000;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .increment-button {
+      margin-left: 5px;
+    }
+
+    .done-button {
+      background-color: #000000;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    .day-box {
+      background-color: #444444;
+      color: #ffffff; 
+    }
+  </style>
+  <script>
+    function markExerciseComplete(button) {
+      const exerciseRow = button.parentNode.parentNode;
+      exerciseRow.classList.toggle("exercise-done");
+    }
+
+    function resetExerciseStatus() {
+      const exercises = document.getElementsByClassName("exercise-done");
+      for (let i = exercises.length - 1; i >= 0; i--) {
+        exercises[i].classList.remove("exercise-done");
+      }
+    }
+
+    function increaseWeight(inputId) {
+      const weightInput = document.getElementById(inputId);
+      let weight = parseFloat(weightInput.value);
+      if (!isNaN(weight)) {
+        weight += 2.5;
+        weightInput.value = weight.toFixed(2);
+      }
+    }
+
+    function changeDayBoxColor(dayId) {
+      var dayBox = document.getElementById(dayId);
+      dayBox.classList.add('day-box');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </script>
+</head>
+<body>
+  <h2>Summer Muscle Gain 7-Day Plan</h2>
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Exercise</th>
+      <th>Sets x Reps</th>
+      <th>Exercise Weight</th>
+      <th>Done</th>
+      <th>Increase Weight</th>
+    </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('monday-day')" id="monday-day">Monday Day 1: Push Day</td>
+      <td>Barbell Bench Press</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex1weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex1weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Dumbbell Shoulder Press</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex2weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex2weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Tricep Dips</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex3weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex3weight')">+</button></td>
+    </tr>
+     <tr>
+      <td></td>
+      <td>Cable Tricep Pushdowns</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex15weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex15weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Lateral Raises</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex16weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex16weight')">+</button></td>
+    </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('tuesday-day')" id="tuesday-day">Tuesday Day 2: Pull Day</td>
+      <td>Pull Ups</td>
+      <td>3 sets of 3-5 reps</td>
+      <td><input type="text" id="ex4weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex4weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Horizontal Cable Rows</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex5weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex5weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Overhand Cable Rows</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex6weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex6weight')">+</button></td>
+    </tr>
+      <tr>
+      <td></td>
+      <td>Dumbbell Bicep Curls</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex2weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex2weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Side to Side Curls</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex3weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex3weight')">+</button></td>
+    </tr>
+   <tr>
+      <td></td>
+      <td>Face Pulls</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex3weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex3weight')">+</button></td>
+    </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('wednesday-day')" id="wednesday-day">Wednesday Day 3: Neck and Forearm Day</td>
+       </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('thursday-day')" id="thursday-day">Thursday Day 4: : Leg Day</td>
+      <td>Barbell Squats</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex7weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex7weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Leg Press</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex8weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex8weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Bulgarian Split Squats</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex9weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex9weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Calf Raises</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex8weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex8weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Vertical Jumps</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex9weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex9weight')">+</button></td>
+    </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('friday-day')" id="friday-day">Friday Day 5: Push Day</td>
+      <td>Dumbbell Bench Press</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex10weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex10weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Arnold Press</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex11weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex11weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Cable Flies</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex12weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex12weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Cable Lateral Raises</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex11weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex11weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Tricep Overhead Extension</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex12weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex12weight')">+</button></td>
+    </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('saturday-day')" id="saturday-day">Saturday Day 6: Pull Day</td>
+      <td>Lat Pulldowns</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex13weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex13weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Horizontal Rows</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex14weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex14weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Pretcher Curls</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex15weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex15weight')">+</button></td>
+    </tr>
+     <tr>
+      <td></td>
+      <td>Reverse Grip Cable Curls (Flat Bar)</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex14weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex14weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Rear Delt Flies</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex15weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex15weight')">+</button></td>
+    </tr>
+    <tr>
+      <td onclick="changeDayBoxColor('sunday-day')" id="sunday-day">Sunday Day 7: Legs Day</td>
+      <td>Front Squats</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex16weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex16weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Leg Press (Low and Shoulder Width)</td>
+      <td>3 sets of 8-10 reps</td>
+      <td><input type="text" id="ex17weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex17weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Walking Lunges</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex18weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex18weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Yoga Ball Plate Squats</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex18weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex18weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Single-leg Calf Raises</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex18weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex18weight')">+</button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Box Jumps</td>
+      <td>3 sets of 10-12 reps</td>
+      <td><input type="text" id="ex18weight"></td>
+      <td><button onclick="markExerciseComplete(this)">Done</button></td>
+      <td><button class="increment-button" onclick="increaseWeight('ex18weight')">+</button></td>
+    </tr>
+  </table>
+  <button class="button-reset" onclick="resetExerciseStatus()">Reset</button>
+</body>
+</html>
