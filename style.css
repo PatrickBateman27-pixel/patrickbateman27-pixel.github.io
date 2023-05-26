@@ -1,0 +1,151 @@
+<html>
+<head>
+  <title>Mobile Workout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .day {
+      margin-top: 20px;
+    }
+
+    .exercise {
+      margin-bottom: 10px;
+    }
+
+    .exercise-name {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .exercise-sets {
+      margin-left: 20px;
+    }
+
+    .increment-button {
+      display: inline-block;
+      font-weight: bold;
+      padding: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .done-button {
+      display: inline-block;
+      font-weight: bold;
+      padding: 8px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .exercise-done {
+      text-decoration: line-through;
+    }
+
+    /* Media query for mobile devices */
+    @media only screen and (max-width: 600px) {
+      .exercise {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .exercise-name {
+        font-size: 18px;
+      }
+
+      .exercise-sets {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .increment-button {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      .done-button {
+        font-size: 12px;
+        padding: 6px;
+      }
+    }
+
+    /* Additional CSS for day box color change */
+    .day-box {
+      background-color: #444444;
+      color: #444444; 
+    }
+ </script>
+</head>
+<body>
+  <div class="workout-day">
+    <h2>MonDay 1: Push Day</h2>
+    <div class="exercise" onclick="toggleCompletion(this)">
+      <div class="exercise-name">Barbell Bench Press</div>
+      <button class="done-button">✓</button>
+    </div>
+
+    <div class="exercise" onclick="toggleCompletion(this)">
+      <div class="exercise-name">Dumbbell Shoulder Press</div>
+      <button class="done-button">✓</button>
+    </div>
+
+    <div class="exercise" onclick="toggleCompletion(this)">
+      <div class="exercise-name">Incline Dumbbell Flyes</div>
+      <button class="done-button">✓</button>
+    </div>
+
+    <div class="exercise" onclick="toggleCompletion(this)">
+      <div class="exercise-name">Tricep Dips</div>
+      <button class="done-button">✓</button>
+    </div>
+
+    <div class="exercise" onclick="toggleCompletion(this)">
+      <div class="exercise-name">Cable Tricep Pushdowns</div>
+      <button class="done-button">✓</button>
+    </div>
+
+    <div class="exercise" onclick="toggleCompletion(this)">
+      <div class="exercise-name">Lateral Raises</div>
+      <button class="done-button">✓</button>
+    </div>
+  </div>
+
+.done-button {
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.exercise-done {
+  text-decoration: line-through;
+}
+</body>
+</html>
